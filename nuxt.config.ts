@@ -4,6 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   devServer: {
     port: 4000,
-    host: '0.0.0.0'
-  }
+    host: '0.0.0.0',
+  },
+  modules: [
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
+  ],
+  pinia: {
+    storesDirs: ['./stores/**'],
+  },
 })
