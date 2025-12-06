@@ -1,14 +1,14 @@
 <template>
   <div class="about-page">
-    <h1>About Project</h1>
+    <h1>{{ $t('about.title') }}</h1>
     <div class="content">
       <p>
-        This scaffold follows the "Split Context" architecture recommended for Nuxt 4.
+        {{ $t('about.intro') }}
       </p>
       <ul>
-        <li><strong>Frontend</strong>: All Vue files are in <code>app/</code>.</li>
-        <li><strong>Backend</strong>: API routes are in <code>server/</code>.</li>
-        <li><strong>Config</strong>: Root level configuration.</li>
+        <li><strong>{{ $t('about.frontend') }}</strong>: {{ $t('about.frontend_desc') }}</li>
+        <li><strong>{{ $t('about.backend') }}</strong>: {{ $t('about.backend_desc') }}</li>
+        <li><strong>{{ $t('about.config') }}</strong>: {{ $t('about.config_desc') }}</li>
       </ul>
     </div>
   </div>

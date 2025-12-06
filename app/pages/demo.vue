@@ -1,32 +1,30 @@
 <script setup lang="ts">
-const counter = useCounterStore()
-
 // Fetch data from server API
 const { data: serverInfo, refresh } = await useFetch('/api/info')
 </script>
 
 <template>
   <div class="demo-page">
-    <h1>Interactive Demo</h1>
+    <h1>{{ $t('demo.title') }}</h1>
     
     <div class="grid">
       <!-- Pinia Section -->
       <section class="demo-card">
-        <h2>Pinia Store (Persisted)</h2>
+        <h2>{{ $t('demo.pinia_title') }}</h2>
         <div class="counter-box">
-          <p class="count">Value: {{ counter.count }}</p>
-          <p class="double">Double: {{ counter.doubleCount }}</p>
-          <button @click="counter.increment" class="btn-inc">+ Increment</button>
-          <p class="hint">Refresh the page, this value will persist.</p>
+          <p class="count">{{ $t('demo.value') }}: </p>
+          <p class="double">{{ $t('demo.double') }}: </p>
+          <button @click="" class="btn-inc"></button>
+          <p class="hint">{{ $t('demo.hint') }}</p>
         </div>
       </section>
 
       <!-- Server API Section -->
       <section class="demo-card">
-        <h2>Server API Fetch</h2>
+        <h2>{{ $t('demo.server_title') }}</h2>
         <div class="api-box">
           <pre v-if="serverInfo">{{ serverInfo }}</pre>
-          <button @click="() => refresh()" class="btn-refresh">Refresh Data</button>
+          <button @click="() => refresh()" class="btn-refresh">{{ $t('demo.refresh') }}</button>
         </div>
       </section>
     </div>

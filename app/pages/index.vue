@@ -1,28 +1,32 @@
+<script setup lang="ts">
+const localePath = useLocalePath()
+</script>
+
 <template>
   <div class="home-page">
-    <h1>Welcome to Nuxt Scaffold</h1>
+    <h1>{{ $t('home.title') }}</h1>
     <p class="intro">
-      This is a complete example of a Nuxt 4 application structure.
+      {{ $t('home.subtitle') }}
     </p>
     
     <div class="features">
       <div class="card">
-        <h3>Layouts</h3>
-        <p>Using default layout with Header and Footer.</p>
+        <h3>{{ $t('home.features.layouts') }}</h3>
+        <p>{{ $t('home.features.layouts_desc') }}</p>
       </div>
       <div class="card">
-        <h3>Pinia</h3>
-        <p>State management with persistence enabled.</p>
+        <h3>{{ $t('home.features.pinia') }}</h3>
+        <p>{{ $t('home.features.pinia_desc') }}</p>
       </div>
       <div class="card">
-        <h3>Server API</h3>
-        <p>Integrated server routes in <code>server/api</code>.</p>
+        <h3>{{ $t('home.features.server') }}</h3>
+        <p>{{ $t('home.features.server_desc') }}</p>
       </div>
     </div>
 
     <div class="actions">
-      <NuxtLink to="/demo" class="btn primary">Try Demo</NuxtLink>
-      <NuxtLink to="/about" class="btn secondary">Read More</NuxtLink>
+      <NuxtLink :to="localePath('/demo')" class="btn primary">{{ $t('home.actions.try_demo') }}</NuxtLink>
+      <NuxtLink :to="localePath('/about')" class="btn secondary">{{ $t('home.actions.read_more') }}</NuxtLink>
     </div>
   </div>
 </template>

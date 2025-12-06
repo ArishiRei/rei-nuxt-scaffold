@@ -5,3 +5,8 @@
 2025-12-05 18:45 Learning Update: [Nuxt 4 Architecture Confirmation](./tree/learn-nuxt4.md)
 2025-12-05 19:00 Scaffold Impl: [Basic Web Application Scaffold](./tree/impl-scaffold.md)
 2025-12-05 19:15 Bug Fix: [Fix Demo Page Type Error](./tree/fix-demo-type-error.md)
+2025-12-06 00:30 Blog System: [Blog Route Mapping & Markdown Engine](./tree/impl-blog-system.md)
+2025-12-06 00:40 Bug Fix: [Fix Blog Type Errors](./tree/fix-blog-types.md)
+2025-12-06 00:50 Bug Fix: [Fix Blog Routing & 404 Errors](./tree/fix-blog-routing.md)
+2025-12-06 01:10 Refactor: [Types, Config, i18n Implementation](./tree/refactor-types-config-i18n.md)
+2025-12-06 02:05 Fix: [i18n Config & Auto-Import Conflicts](./tree/config-i18n-fixes.md)

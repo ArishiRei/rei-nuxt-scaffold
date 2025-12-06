@@ -1,11 +1,18 @@
+<script setup lang="ts">
+const { siteConfig } = useConfigx()
+const { localePath, locale, setLocale } = useContext()
+</script>
+
 <template>
   <header class="app-header">
     <nav>
-      <NuxtLink to="/" class="brand">Nuxt Scaffold</NuxtLink>
+      <NuxtLink :to="localePath('/')" class="brand">Nuxt Scaffold</NuxtLink>
       <div class="links">
-        <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/about">About</NuxtLink>
-        <NuxtLink to="/demo">Demo</NuxtLink>
+        <NuxtLink v-for="(item, index) in siteConfig.router.navbar" :key="index" :to="localePath(item.path)">{{ $t(item.title) }}</NuxtLink>
+      </div>
+      <div class="lang-switch">
+        <button @click="setLocale('en')" :class="{ active: locale === 'en' }">EN</button>
+        <button @click="setLocale('zh')" :class="{ active: locale === 'zh' }">中文</button>
       </div>
     </nav>
   </header>
@@ -32,6 +39,23 @@ nav {
 .links {
   display: flex;
   gap: 1.5rem;
+}
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+}
+.lang-switch button {
+  background: none;
+  border: 1px solid #eee;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+.lang-switch button.active {
+  background: #00dc82;
+  color: white;
+  border-color: #00dc82;
 }
 a {
   text-decoration: none;
